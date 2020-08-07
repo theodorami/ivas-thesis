@@ -1,7 +1,7 @@
 import React from "react";
 
-import LoginScreen from "./App/screens/LoginScreen";
+import DashboardScreen from "./App/screens/DashboardScreen";
 
 export default function App() {
-  return <LoginScreen />;
+  return <DashboardScreen />;
 }
