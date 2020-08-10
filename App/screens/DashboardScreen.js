@@ -1,48 +1,35 @@
 import React from "react";
-import { FlatList, StyleSheet } from "react-native";
+import { StyleSheet, SafeAreaView, View, Text } from "react-native";
+import TabComponent from "../components/TabComponent";
+//import AppText from "../components/AppText";
 
-import Card from "../components/Card";
 import colors from "../config/colors";
-import Screen from "../components/AppScreen";
-
-const Inhalt = [
-  {
-    id: 1,
-    title: "Modul Wildkamera",
-    subtitle: "live einsehen",
-    image: require("../assets/placeholder-2.jpg"),
-  },
-  {
-    id: 2,
-    title: "Modul Wetter",
-    subtitle: "22 C°",
-    image: require("../assets/placeholder.jpg"),
-  },
-];
 
 function DashboardScreen() {
   return (
-    <Screen style={styles.screen}>
-      <FlatList
-        data={Inhalt}
-        keyExtractor={(Inhalt) => Inhalt.id.toString()}
-        renderItem={({ item }) => (
-          <Card
-            title={item.title}
-            subTitle={item.subtitle}
-            image={item.image}
-            onPress={() => console.log("pressed")}
-          />
-        )}
-      />
-    </Screen>
+    <View style={styles.view}>
+      <View style={styles.vieweins}>
+        <Text style={styles.texte}> Hallo Paul, </Text>
+      </View>
+      <TabComponent />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  screen: {
-    padding: 20,
+  view: {
+    //backgroundColor: colors.primary,
+    flex: 1,
+  },
+  vieweins: {
     backgroundColor: colors.light,
+    height: "20%",
+    justifyContent: "center",
+  },
+  texte: {
+    fontSize: 50,
+    color: colors.primary,
+    marginLeft: "5%",
   },
 });
 

@@ -1,26 +1,24 @@
 import React from "react";
-import {
-  View,
-  StyleSheet,
-  Image,
-  TouchableWithoutFeedback,
-} from "react-native";
+import { View, StyleSheet, Text, TouchableWithoutFeedback } from "react-native";
 
-import AppText from "./AppText";
 import colors from "../config/colors";
 
-function Card({ title, subTitle, image, onPress }) {
+import { WebView } from "react-native-webview";
+
+import MapsScript from "../components/MapsScript";
+
+function CardMap() {
   return (
-    <TouchableWithoutFeedback onPress={onPress}>
+    <TouchableWithoutFeedback>
       <View style={styles.card}>
-        <Image style={styles.image} source={image} />
+        <WebView source={{ html: MapsScript }} style={styles.image} />
         <View style={styles.detailsContainer}>
-          <AppText style={styles.title} numberOfLines={1}>
-            {title}
-          </AppText>
-          <AppText style={styles.subTitle} numberOfLines={2}>
-            {subTitle}
-          </AppText>
+          <Text style={styles.title} numberOfLines={1}>
+            Hi
+          </Text>
+          <Text style={styles.subTitle} numberOfLines={2}>
+            lol
+          </Text>
         </View>
       </View>
     </TouchableWithoutFeedback>
@@ -42,7 +40,9 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
+    flex: 2,
     height: 200,
+    backgroundColor: "#f6f6f6",
   },
   subTitle: {
     color: colors.secondary,
@@ -53,4 +53,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Card;
+export default CardMap;

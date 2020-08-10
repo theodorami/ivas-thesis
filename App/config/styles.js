@@ -12,4 +12,8 @@ export default {
     fontSize: 18,
     fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
   },
+  uberschrift: {
+    color: colors.primary,
+    fontSize: 22,
+  },
 };

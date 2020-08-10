@@ -1,11 +1,4 @@
 import React from "react";
-import test from "./App/components/test";
-
-export default function App() {
-  return <test />;
-}
-
-import React from "react";
 import {
   View,
   Text,
@@ -17,9 +10,9 @@ import {
 
 import { WebView } from "react-native-webview";
 
-import MapsScript from "../components/MapsScript";
+import MapsScript from "./MapsScript";
 
-class App extends React.Component {
+class Test2 extends React.Component {
   _goToMyPosition = (lat, lon) => {
     this.refs["Map_Ref"].injectJavaScript(`
       mymap.setView([${lat}, ${lon}], 10)
@@ -91,4 +84,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Test2;

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ivas-thesis",
-    "slug": "ivas-thesis",
+    "name": "ivas-thesis_Theoodora",
+    "slug": "ivas-thesis_theoodora",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,12 +13,16 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Thesis",
+    "githubUrl": "https://github.com/theodorami/ivas-thesis.git"
   }
 }
