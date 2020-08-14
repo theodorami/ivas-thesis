@@ -6,7 +6,6 @@ import AppButton from "../components/AppButton";
 function WelcomeScreen(props) {
   return (
     <ImageBackground
-      //blurRadius={10}
       style={styles.background}
       source={require("../assets/background.png")}
     >
@@ -14,8 +13,8 @@ function WelcomeScreen(props) {
         <Image style={styles.logo} source={require("../assets/logo.png")} />
       </View>
       <View style={styles.buttonsContainer}>
-        <AppButton title="Login" />
-        <AppButton title="Register" color="secondary" />
+        <AppButton title="Login" style={styles.test} />
+        <AppButton title="Register" color="transparent" />
       </View>
     </ImageBackground>
   );
@@ -26,6 +25,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
+    //blurRadius={10}
   },
   buttonsContainer: {
     margin: 10,
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     width: "48.5%",
     flexDirection: "row",
     alignSelf: "flex-start",
+    justifyContent: "space-between",
   },
   logo: {
     width: 100,
@@ -43,11 +44,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 70,
     alignItems: "center",
-  },
-  tagline: {
-    fontSize: 25,
-    fontWeight: "600",
-    paddingVertical: 40,
   },
 });
 

@@ -5,16 +5,31 @@ import { LinearGradient } from "expo-linear-gradient";
 import colors from "../config/colors";
 
 function AppButton({ title, onPress, color = "primary" }) {
-  return (
-    <LinearGradient // Button Linear Gradient
-      style={styles.button}
-      colors={[colors.secondary, colors.third]}
-    >
-      <TouchableOpacity onPress={onPress}>
-        <Text style={styles.text}>{title}</Text>
+  if (color === "primary") {
+    return (
+      <LinearGradient // Button Linear Gradient
+        style={styles.button}
+        colors={[colors.secondary, colors.third]}
+      >
+        <TouchableOpacity onPress={onPress}>
+          <Text style={styles.text}>{title}</Text>
+        </TouchableOpacity>
+      </LinearGradient>
+    );
+  } else {
+    return (
+      <TouchableOpacity
+        style={[
+          styles.button,
+          styles.buttonlight,
+          { backgroundColor: colors[color] },
+        ]}
+        onPress={onPress}
+      >
+        <Text style={[styles.text, styles.textlight]}>{title} </Text>
       </TouchableOpacity>
-    </LinearGradient>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -24,9 +39,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
     width: "100%",
-    marginRight: 10,
     marginTop: 20,
-    borderColor: colors.black,
+    marginRight: 10,
+  },
+  buttonlight: {
+    borderColor: colors.secondary,
+    borderWidth: 2,
   },
   text: {
     color: colors.white,
@@ -34,6 +52,9 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
     fontWeight: "bold",
     backgroundColor: "transparent",
+  },
+  textlight: {
+    color: colors.secondary,
   },
 });
 

@@ -1,17 +1,16 @@
 import * as React from "react";
-import { View, Text, StyleSheet, Dimensions, StatusBar } from "react-native";
-import { TabView, TabBar, SceneMap } from "react-native-tab-view";
-import { Constants } from "expo";
+import { Dimensions, StatusBar } from "react-native";
+import { TabView, SceneMap } from "react-native-tab-view";
 
-import colors from "../config/colors";
-import AppScreen from "./AppScreen";
-import AppText from "../components/AppText";
-import CardContainer from "./CardContainer";
-import CardMap from "./CardMap";
+import colors from "../../config/colors";
+import AppScreen from "../AppScreen";
+import AppText from "../AppText";
+import CardWeather from "../Cards/CardWeather";
+import TabOne from "./TabOne";
 
-const FirstRoute = () => <CardContainer />;
+const FirstRoute = () => <TabOne />;
 
-const SecondRoute = () => <CardMap />;
+const SecondRoute = () => <CardWeather />;
 
 // This is our placeholder component for the tabs
 // This will be rendered when a tab isn't loaded yet
@@ -39,7 +38,7 @@ export default class TabComponent extends React.Component {
   render() {
     return (
       <TabView
-        lazy
+        //lazy
         navigationState={this.state}
         renderScene={SceneMap({
           first: FirstRoute,
@@ -48,14 +47,7 @@ export default class TabComponent extends React.Component {
         renderPlatzhalter={this._renderPlatzhalter}
         onIndexChange={this._handleIndexChange}
         initialLayout={{ width: Dimensions.get("window").width }}
-        style={styles.container}
       />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.light,
-  },
-});
