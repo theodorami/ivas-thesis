@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Card, Title } from "react-native-paper";
 import { View, Image, StyleSheet } from "react-native";
+import SmalText from "../Text/SmalText";
 import { icon } from "leaflet";
 //import AsyncStorage from "@react-native-community/async-storage";
 
@@ -40,25 +40,25 @@ const CardWeather = () => {
             uri: "https://openweathermap.org/img/w/" + info.icon + ".png",
           }}
         />
-        <Title style={{ color: "#00aaff" }}>Aktuell - {info.temp}</Title>
+        <SmalText style={{ color: "#00aaff" }}>Aktuell - {info.temp}</SmalText>
       </View>
       <View style={styles.row}>
         <Image
           style={styles.image}
           source={require("../../assets/icons/tempmin.png")}
         />
-        <Title style={{ color: "#00aaff" }}>
+        <SmalText style={{ color: "#00aaff" }}>
           Höchsttemperatur - {info.tempmax}
-        </Title>
+        </SmalText>
       </View>
       <View style={styles.row}>
         <Image
           style={styles.image}
           source={require("../../assets/icons/tempmax.png")}
         />
-        <Title style={{ color: "#00aaff" }}>
+        <SmalText style={{ color: "#00aaff" }}>
           Tiefsttemperatur - {info.tempmin}
-        </Title>
+        </SmalText>
       </View>
     </View>
   );

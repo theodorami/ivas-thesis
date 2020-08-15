@@ -57,6 +57,13 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     marginStart: "4%",
     marginBottom: "4%",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   detailsContainer: {
     padding: 20,

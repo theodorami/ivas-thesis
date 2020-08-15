@@ -10,7 +10,7 @@ function DashboardScreen() {
   return (
     <View style={styles.view}>
       <View style={styles.vieweins}>
-        <BigText> Hallo Max, </BigText>
+        <BigText> Hallo Tino!!!!!! </BigText>
       </View>
       <TabComponent />
     </View>
