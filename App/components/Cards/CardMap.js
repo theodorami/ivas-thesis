@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Text, TouchableWithoutFeedback } from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 import colors from "../../config/colors";
 
@@ -9,7 +9,7 @@ import MapsScript from "../MapsScript";
 
 function CardMap() {
   return (
-    <TouchableWithoutFeedback>
+    <TouchableOpacity>
       <View style={styles.card}>
         <WebView source={{ html: MapsScript }} style={styles.image} />
         <View style={styles.detailsContainer}>
@@ -21,7 +21,7 @@ function CardMap() {
           </Text>
         </View>
       </View>
-    </TouchableWithoutFeedback>
+    </TouchableOpacity>
   );
 }
 
@@ -34,6 +34,14 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     width: "46%",
     marginStart: "4%",
+    shadowColor: colors.primary,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 10,
   },
   detailsContainer: {
     padding: 20,

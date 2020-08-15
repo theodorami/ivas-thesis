@@ -6,7 +6,7 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 
-import AppText from "./AppText";
+import AppText from "./Text/AppText";
 import colors from "../config/colors";
 
 function Card({ title, subTitle, content, onPress }) {
@@ -58,7 +58,7 @@ export default Card;
 import React from "react";
 import { View, StyleSheet, Image, TouchableHighlight } from "react-native";
 
-import AppText from "./AppText";
+import AppText from "./Text/AppText";
 import colors from "../config/colors";
 
 function DetailsCard({ title, subtitle, image, onPress }) {

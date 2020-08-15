@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Image, TouchableHighlight } from "react-native";
 
-import AppText from "./AppText";
-import colors from "../config/colors";
+import AppText from "../Text/AppText";
+import colors from "../../config/colors";
 
 function DetailsCard({ title, subtitle, image, onPress }) {
   return (

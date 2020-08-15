@@ -2,9 +2,8 @@ import * as React from "react";
 import { Dimensions, StatusBar } from "react-native";
 import { TabView, SceneMap } from "react-native-tab-view";
 
-import colors from "../../config/colors";
 import AppScreen from "../AppScreen";
-import AppText from "../AppText";
+import AppText from "../Text/AppText";
 import CardWeather from "../Cards/CardWeather";
 import TabOne from "./TabOne";
 

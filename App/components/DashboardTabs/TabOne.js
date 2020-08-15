@@ -1,17 +1,10 @@
 import React from "react";
-import {
-  FlatList,
-  StyleSheet,
-  View,
-  ScrollView,
-  TouchableWithoutFeedback,
-} from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 
 import Card from "../Cards/card";
 import colors from "../../config/colors";
 import AppScreen from "../AppScreen";
 import MapsScript from "../MapsScript";
-import CardMap from "../Cards/CardMap";
 import CardWeather from "../Cards/CardWeather";
 
 const Inhalt = [
@@ -52,7 +45,6 @@ function TabOne() {
           )}
         />
         <View style={styles.new}>
-          <CardMap />
           <CardWeather />
         </View>
       </View>

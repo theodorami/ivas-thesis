@@ -7,7 +7,7 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 
-import AppText from "../AppText";
+import AppText from "../Text/AppText";
 import colors from "../../config/colors";
 import MapsScript from "../MapsScript";
 import SmalText from "../Text/SmalText";
@@ -56,14 +56,15 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     overflow: "hidden",
     marginStart: "4%",
-    marginBottom: "4%",
+    marginBottom: "2%",
+    shadowColor: colors.primary,
     shadowOffset: {
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 10,
   },
   detailsContainer: {
     padding: 20,
@@ -74,6 +75,10 @@ const styles = StyleSheet.create({
   },
   title: {
     marginBottom: 7,
+    color: colors.third,
+  },
+  subTitle: {
+    color: colors.primary,
   },
 });
 

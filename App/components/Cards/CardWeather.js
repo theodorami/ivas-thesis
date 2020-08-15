@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { View, Image, StyleSheet } from "react-native";
 import SmalText from "../Text/SmalText";
 import { icon } from "leaflet";
+
+import colors from "../../config/colors";
 //import AsyncStorage from "@react-native-community/async-storage";
 
 const CardWeather = () => {
@@ -40,25 +42,30 @@ const CardWeather = () => {
             uri: "https://openweathermap.org/img/w/" + info.icon + ".png",
           }}
         />
-        <SmalText style={{ color: "#00aaff" }}>Aktuell - {info.temp}</SmalText>
+        <View style={styles.holder}>
+          <SmalText style={styles.title}> {info.temp} C° </SmalText>
+          <SmalText style={styles.subtitle}>Aktuell</SmalText>
+        </View>
       </View>
       <View style={styles.row}>
         <Image
           style={styles.image}
           source={require("../../assets/icons/tempmin.png")}
         />
-        <SmalText style={{ color: "#00aaff" }}>
-          Höchsttemperatur - {info.tempmax}
-        </SmalText>
+        <View style={styles.holder}>
+          <SmalText style={styles.title}> {info.tempmax} C° </SmalText>
+          <SmalText style={styles.subtitle}>Höchsttemperatur</SmalText>
+        </View>
       </View>
       <View style={styles.row}>
         <Image
           style={styles.image}
           source={require("../../assets/icons/tempmax.png")}
         />
-        <SmalText style={{ color: "#00aaff" }}>
-          Tiefsttemperatur - {info.tempmin}
-        </SmalText>
+        <View style={styles.holder}>
+          <SmalText style={styles.title}> {info.tempmin} C° </SmalText>
+          <SmalText style={styles.subtitle}>Tiefsttemperatur</SmalText>
+        </View>
       </View>
     </View>
   );
@@ -67,33 +74,46 @@ const CardWeather = () => {
 const styles = StyleSheet.create({
   card: {
     //flex: 1,
+    width: "46%",
     borderRadius: 15,
     overflow: "hidden",
-    margin: "4%",
-    padding: "4%",
-    backgroundColor: "#fff",
+    marginStart: "4%",
+    paddingTop: "4%",
+    backgroundColor: colors.white,
+    shadowColor: colors.primary,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 10,
   },
   row: {
     flexDirection: "row",
     backgroundColor: "fff",
     flex: 2,
-    padding: 20,
-
-    width: "100%",
-    //  justifyContent: "center",
-    alignItems: "center",
-    //alignContent: "space-around",
+    paddingHorizontal: 10,
+    marginVertical: 2,
   },
   image: {
     //flex: 1,
     width: 50,
     height: 50,
-    backgroundColor: "f2f2f2",
     marginRight: "10%",
     resizeMode: "contain",
   },
+  holder: {
+    flexDirection: "column",
+    //alignContent: "center",
+    justifyContent: "center",
+  },
   subtitle: {
-    fontStyle: "italic",
+    color: colors.primary,
+  },
+  title: {
+    color: colors.third,
+    fontStyle: "bold",
   },
 });
 export default CardWeather;
