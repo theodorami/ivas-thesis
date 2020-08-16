@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 24,
     color: colors.secondary,
-    marginLeft: "5%",
     fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
   },
 });
